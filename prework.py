@@ -4,8 +4,10 @@
 # Write a function to print "hello_USERNAME!" USERNAME is the input of the function. The first line of the code has been defined as below.
 
 def hello_name(user_name):
-    print("hello_" + user_name)
+    print("hello_" + user_name.upper() + "!")
     return
+
+hello_name("todd")
                 
 # Question 2
 # Write a python function, first_odds that prints the odd numbers from 1-100 and returns nothing
@@ -48,4 +50,3 @@ def is_consecutive(a_list):
         if a_list[num+1] != a_list[num] + 1:
             return False
     return True
-
