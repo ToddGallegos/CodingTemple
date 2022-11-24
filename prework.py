@@ -7,7 +7,6 @@ def hello_name(user_name):
     print("hello_" + user_name.upper() + "!")
     return
 
-hello_name("todd")
                 
 # Question 2
 # Write a python function, first_odds that prints the odd numbers from 1-100 and returns nothing
