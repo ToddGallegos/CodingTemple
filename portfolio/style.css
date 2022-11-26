@@ -6,7 +6,7 @@
 
 body {
   width: 100%;
-  background-color: lightgray;
+  background-color: black;
   font-family: Arial, sans-serif;
 }
 
@@ -15,9 +15,8 @@ header {
 }
 
 #hero-div {
-  background: linear-gradient(darkblue, purple);
+  background-color: black;
   display: flex;
-  background-color: lightgray;
   align-items: center;
   height: 15rem;
   justify-content: center;
@@ -25,15 +24,16 @@ header {
 
 h1 {
   font-size: 5rem;
-  font-family: Arial, serif;
-  text-shadow: 1px 1px 2px maroon;
+  background: linear-gradient(to right, rgb(8, 213, 236), rgb(0, 8, 232));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 nav {
   display: flex;
-  background-color: black;
+  background-color: white;
   justify-content: space-between;
-  color: lightgray;
+  color: black;
   padding: 0 1rem;
   width: 100%;
 }
@@ -51,7 +51,7 @@ nav {
 main {
   display: flex;
   width: 100%;
-  background-color: lightgray;
+  background-color: black;
 }
 
 .imagelist {
@@ -59,23 +59,23 @@ main {
 }
 
 #main-left {
-  background-color: lightgray;
+  background-color: black;
   flex: 0 0 70%;
 }
 
 #main-right {
-  background-color: lightgray;
+  background-color: black;
   flex: 0 1 auto;
 }
 
 .articles {
-  margin: 1rem;
+  margin: 1rem 1rem 1rem 0;
   padding: 1rem;
   background-color: white;
 }
 
 .sections {
-  margin: 1rem 1rem 1rem 0;
+  margin: 1rem 0;
   padding: 1rem;
   background-color: white;
 }
@@ -101,8 +101,9 @@ p {
 }
 
 footer {
+  color: darkgray;
   text-align: center;
-  background-color: lightgray;
+  background-color: black;
 }
 
 a {
