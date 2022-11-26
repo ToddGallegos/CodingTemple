@@ -23,6 +23,7 @@ header {
 }
 
 h1 {
+  padding: 1rem;
   font-size: 5rem;
   background: linear-gradient(to right, rgb(8, 213, 236), rgb(0, 8, 232));
   -webkit-background-clip: text;
@@ -147,7 +148,9 @@ h4 {
     display: block;
   }
 
-  .sections {
-    margin: 1rem;
+  .sections, .articles {
+    margin: 1rem 0;
   }
+
+
 }
