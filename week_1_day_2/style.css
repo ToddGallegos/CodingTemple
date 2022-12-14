@@ -38,14 +38,14 @@ li {
 #hero {
     width: 100%;
     display:flex;
-    background-image: url(theater-stage-1.jpg);
+    background-image: url(theater.png);
     background-position:center;
     background-repeat: no-repeat;
     background-size: cover;
     height: 50em;
     align-items: center;
     justify-content: center;
-    color:black;
+    color:white;
     margin-bottom: 10rem;
 }
 
@@ -106,6 +106,7 @@ footer {
 footer p {
     margin-bottom: 2.5rem;
     font-size: 14px;
+    margin-top:2rem;
 }
 
 #map {
@@ -115,7 +116,6 @@ footer p {
 
 h1 {
     font-size: 10rem;
-    text-shadow: #FC0 1px 0 10px;
 }
 
 h2 {
@@ -144,4 +144,15 @@ button:hover {
 
 .pushleft {
     padding-right: 7rem;
+}
+
+.tiny {
+    height: 2rem;
+    float:left;
+    padding-right: 1rem;
+    padding-bottom: 1rem;
+}
+
+footer div {
+    width: 15.6rem;
 }
