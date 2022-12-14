@@ -49,3 +49,4 @@ def is_consecutive(a_list):
         if a_list[num+1] != a_list[num] + 1:
             return False
     return True
+
