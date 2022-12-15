@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bootstrap Site</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+      integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I"
+      crossorigin="anonymous"
+    />
+ 
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+      integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="logodiv">
+      <img id="logo" src="ama_logo.png" alt="satirical amazon logo" />
+    </div>
+    <div id="cardcontainer">
+      <div class="card" style="width: 25rem">
+        <div class="card-body">
+          <h5 class="card-title">Sign In</h5>
+          <p class="card-text">Email (phone or mobile accounts)</p>
+          <input
+            type="text"
+            name="username"
+            id="username"
+            placeholder="Enter Email"
+          />
+          <div id="middletext">
+            <p>Password</p>
+            <a href="#"><p>Forgot Password</p></a>
+          </div>
+          <input
+            type="password"
+            name="password"
+            id="password"
+            placeholder="Enter Password"
+          />
+          <a href="#" class="btn btn-warning" id="btnid">Continue</a>
+          <ul>
+            <li><a href="#">Need Help?</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div id="brokenrulecontainer">
+      <div id="brokenrule">
+        <hr />
+        <p>New to Amazon?</p>
+        <hr />
+      </div>
+    </div>
+    <div id="loginbtncontainer">
+      <a href="#" class="btn btn-secondary" id="creatacct">Create Your Amazon Account</a>
+    </div>
+    <hr>
+    <div id="outercontainer">
+        <div id="bottomcontainer">
+            <a href="#"><p>Conditions of Use</p></a>
+            <a href="#"><p>Privacy Policy</p></a>
+            <a href="#"><p>Help</p></a>
+        </div>
+    </div>
+    <div id="lastdiv">
+        <p>&copy Copyright 1996-2022, Amazon.com Inc., or its affiliates</p>
+    </div>
+  </body>
+</html>
