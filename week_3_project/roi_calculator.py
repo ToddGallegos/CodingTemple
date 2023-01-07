@@ -10,7 +10,7 @@ def roi_calc():
     while running == True:
         print('*'*50,"\n*   Welcome to the Cash-On-Cash ROI Calculator   *")
         print('*'*50,"\n")
-        print(f"Current Cash-On-Cash ROI = {round(get_roi(values['total_income'], values['total_expenses'], values['initial_investment']),2)}%\nCurrent Monthly Rental Income: ${values['total_income']:,}\nCurrent Monthly Rental Expenses: ${values['total_expenses']:,}\nCurrent Initial Investment: ${values['initial_investment']:,}\n")
+        print(f"Current Cash-On-Cash ROI = {round(get_roi(values['total_income'], values['total_expenses'], values['initial_investment']),2)}% (8% to 12% indicates a worthwhile investment)\nCurrent Monthly Rental Income: ${values['total_income']:,}\nCurrent Monthly Rental Expenses: ${values['total_expenses']:,}\nCurrent Initial Investment: ${values['initial_investment']:,}\n")
         print("Please enter all applicable data below using only numbers. Blank fields will default to 0.\n\nPLEASE CHOOSE:\n0) Quit\n1) Change Monthly Rental Income\n2) Change Monthly Rental Expenses\n3) Change Initial Investment\n4) Clear Current Values\n")
         try:    
             choice = int(input("CHOICE NUMBER: "))
