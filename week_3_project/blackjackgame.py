@@ -1,3 +1,5 @@
+# UNFINISHED
+
 import random
 
 def get_card(deck):
@@ -18,7 +20,7 @@ def get_card(deck):
         mycard = "A"
         deck[num1] -= 1
     else:
-        mycard = get_card()
+        mycard = get_card(deck)
     return mycard
 
 def get_value(hand):
@@ -70,6 +72,8 @@ def play_blackjack():
         print("Dealer hits.")
         cpu_cards.append(get_card(deck))
         cpu_value = get_value(cpu_cards)
+        if cpu_value > 16:
+            break
     if cpu_value > 21:
         play_again = input("The dealer busted! Play again?\n'y' or 'n': ")
     if player_value > cpu_value and player_value < 22:
@@ -78,6 +82,7 @@ def play_blackjack():
         play_again = input("You lost. Play again?\n'y' or 'n': ")
     else:
         play_again = input("It's a tie. Play again?\n'y' or 'n': ")
+    print(player_value, cpu_value)
     
     
 play_blackjack()
