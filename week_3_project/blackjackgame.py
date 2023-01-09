@@ -19,7 +19,18 @@ def get_card(deck):
         deck[num1] -= 1
     else:
         mycard = get_card()
-    return mycard 
+    return mycard
+
+def get_value(hand):
+    value = 0
+    for card in hand:
+        if type(card) == int:
+            value += card
+        elif type(card) == str and card != "A":
+            value += 10
+        elif card == "A":
+            value += 11
+    return value
     
 def play_blackjack():
     fresh_deck = {2:4, 3:4, 4:4, 5:4, 6:4, 7:4, 8:4, 9:4, 10:4, 11:4, 12:4, 13:4, 14:4}
@@ -29,7 +40,11 @@ def play_blackjack():
     
     player_cards = [get_card(deck), get_card(deck)]
     cpu_cards = [get_card(deck), get_card(deck)]
+    player_value = get_value(player_cards)
+    cpu_value = get_value(cpu_cards)
     
-    print(player_cards, cpu_cards, deck)
+    
+    
+    print(player_cards, cpu_cards, player_value, cpu_value)
     
 play_blackjack()
