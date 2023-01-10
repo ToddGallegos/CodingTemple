@@ -37,9 +37,12 @@ SELECT COUNT(last_name) FROM customer WHERE last_name LIKE '%es';
 -- 9. How many payment amounts (4.99, 5.99, etc.) had a number of rentals above 250 for customers
 -- with ids between 380 and 430? (use group by and having > 250)
 -- 3
-SELECT amount, COUNT(amount) FROM payment WHERE customer_id > 379 AND customer_id < 431 GROUP BY amount ORDER BY COUNT(amount) DESC;
+SELECT amount, COUNT(amount) 
+FROM payment 
+WHERE customer_id > 379 AND customer_id < 431 
+GROUP BY amount
+HAVING COUNT(amount) > 250;
 
---SELECT amount, COUNT(amount) AS tot_count FROM payment WHERE customer_id > 379 AND customer_id < 431 AND tot_count > 250 GROUP BY amount ORDER BY COUNT(amount) DESC;
 
 -- 10. Within the film table, how many rating categories are there? And what rating has the most
 -- movies total?
