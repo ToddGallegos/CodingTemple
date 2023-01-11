@@ -9,6 +9,13 @@
             "database": "test_db",
             "username": "postgres",
             "password": "CodingTemple4L.."
+        },
+        {
+            "previewLimit": 50,
+            "server": "localhost",
+            "driver": "PostgreSQL",
+            "name": "week_4_day_2",
+            "connectString": "postgres://qddbtyjs:IA1UQhmY2ht48q6PqXTcBOI0h0AJHDzc@mahmud.db.elephantsql.com/qddbtyjs"
         }
     ]
 }
