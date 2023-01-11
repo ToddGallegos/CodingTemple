@@ -5,16 +5,15 @@ CREATE TABLE customer(
     email VARCHAR(100),
     date_of_birth DATE,
     billing_info VARCHAR(150)
-)
+);
 
 CREATE TABLE ticket(
     ticket_id SERIAL PRIMARY KEY,
     movie_id INTEGER NOT NULL,
     customer_id INTEGER NOT NULL,
     date_sold DATE,
-    FOREIGN KEY(movie_id) REFERENCES movie(movie_id),
     FOREIGN KEY(customer_id) REFERENCES customer(customer_id)
-)
+);
 
 CREATE TABLE movie(
     movie_id SERIAL PRIMARY KEY,
@@ -24,13 +23,16 @@ CREATE TABLE movie(
     rating VARCHAR(50),
     genre VARCHAR(50),
     FOREIGN KEY(tickets_sold) REFERENCES ticket(ticket_id)
-)
+);
 
 CREATE TABLE concession(
     concession_id SERIAL PRIMARY KEY,
     customer_id INTEGER NOT NULL,
     concession_name VARCHAR(100),
     email VARCHAR(100),
-    price FLOAT(10,2),
+    price NUMERIC(10, 2),
     FOREIGN KEY(customer_id) REFERENCES customer(customer_id)
-)
+);
+
+ALTER TABLE ticket
+ADD FOREIGN KEY(movie_id) REFERENCES movie(movie_id);
