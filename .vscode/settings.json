@@ -15,7 +15,7 @@
             "server": "localhost",
             "driver": "PostgreSQL",
             "name": "theater_project",
-            "connectString": "postgres://dwihrfbd:QxGBmz8rD7rN4UDLtlsWiCQ4rOrilsvb@mahmud.db.elephantsql.com/dwihrfbd"
+            "connectString": "postgres://aklyodvi:W-yW7ioCHSYmsbrA85_SL8baZOA5rk-Z@mahmud.db.elephantsql.com/aklyodvi"
         }
     ]
 }
