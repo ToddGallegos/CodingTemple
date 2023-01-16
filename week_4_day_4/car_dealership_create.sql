@@ -1,3 +1,5 @@
+-- creating the 7 tables needed for the car_dealership database:
+
 CREATE TABLE car (
   car_id SERIAL,
   make VARCHAR(50),

@@ -1,4 +1,4 @@
--- TODO: USE STORED FUNCTIONS TO INSERT 2 PIECES OF DATA.
+-- inserting data into car_dealership database
 
 INSERT INTO car(
     make,
@@ -103,6 +103,7 @@ INSERT INTO service_ticket_mechanic(
     2
 );
 
+--creating an add_car procedure:
 CREATE OR REPLACE PROCEDURE add_car(
     c_id INTEGER,
     _make VARCHAR(50),
@@ -128,10 +129,11 @@ BEGIN
 END;
 $$
 
-SELECT * FROM car;
-
+-- call to add_car procedure to insert new car object:
 CALL add_car(4, 'Chevy', 'Camaro', 1969);
 
+
+-- creating add_customer function:
 CREATE OR REPLACE FUNCTION add_customer(
     c_id INTEGER,
     _customer_name VARCHAR(200)
@@ -151,6 +153,7 @@ END;
 $MAIN$
 LANGUAGE plpgsql;
 
-SELECT * FROM customer;
 
+-- using add_customer function to insert new customers:
 SELECT add_customer(4, 'Mark Kistler');
+SELECT add_customer(5, 'Desmond Doss');
