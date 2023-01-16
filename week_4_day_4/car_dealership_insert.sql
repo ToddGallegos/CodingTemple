@@ -1,3 +1,5 @@
+-- TODO: USE STORED FUNCTIONS TO INSERT 2 PIECES OF DATA.
+
 INSERT INTO car(
     make,
     model,
@@ -100,3 +102,55 @@ INSERT INTO service_ticket_mechanic(
     3,
     2
 );
+
+CREATE OR REPLACE PROCEDURE add_car(
+    c_id INTEGER,
+    _make VARCHAR(50),
+    _model VARCHAR(50),
+    _model_year INTEGER
+)
+LANGUAGE plpgsql
+AS $$
+BEGIN
+    INSERT INTO car(
+    car_id,
+    make,
+    model,
+    model_year
+    ) VALUES (
+        c_id,
+        _make,
+        _model,
+        _model_year
+    );
+    COMMIT;
+
+END;
+$$
+
+SELECT * FROM car;
+
+CALL add_car(4, 'Chevy', 'Camaro', 1969);
+
+CREATE OR REPLACE FUNCTION add_customer(
+    c_id INTEGER,
+    _customer_name VARCHAR(200)
+)
+RETURNS void
+AS $MAIN$
+BEGIN
+    INSERT INTO customer(
+        customer_id,
+        customer_name
+    ) VALUES (
+        c_id,
+        _customer_name
+    );
+
+END;
+$MAIN$
+LANGUAGE plpgsql;
+
+SELECT * FROM customer;
+
+SELECT add_customer(4, 'Mark Kistler');
