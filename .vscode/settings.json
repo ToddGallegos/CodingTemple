@@ -16,6 +16,13 @@
             "driver": "PostgreSQL",
             "name": "theater_project",
             "connectString": "postgres://aklyodvi:W-yW7ioCHSYmsbrA85_SL8baZOA5rk-Z@mahmud.db.elephantsql.com/aklyodvi"
+        },
+        {
+            "previewLimit": 50,
+            "server": "localhost",
+            "driver": "PostgreSQL",
+            "name": "car_dealership",
+            "connectString": "postgres://ctxmokbo:2pB_4KC6V5ajhRRUjNP8RUfxdCI5boMK@kashin.db.elephantsql.com/ctxmokbo"
         }
     ]
 }
