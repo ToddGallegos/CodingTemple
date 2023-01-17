@@ -53,3 +53,13 @@ CREATE TABLE service_ticket_mechanic (
   FOREIGN KEY (service_ticket_id) REFERENCES service_ticket(service_ticket_id),
   FOREIGN KEY (mechanic_id) REFERENCES mechanic(mechanic_id)
 );
+
+ALTER TABLE service_ticket
+ADD COLUMN customer_id INTEGER;
+
+ALTER TABLE service_ticket
+ADD CONSTRAINT fk_customer_id FOREIGN KEY (customer_id) REFERENCES customer(customer_id);
+
+SELECT * FROM service_ticket;
+
+UPDATE service_ticket SET customer_id = 3 WHERE car_id = 3;
