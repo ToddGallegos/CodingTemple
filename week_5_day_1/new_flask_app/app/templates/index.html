@@ -8,7 +8,10 @@
 {% for key in fighters %}
 
     <div class="card" style="width: 18rem; border:none!important">
-        <img style="max-height:300px!important; height:auto; width:fit-content" src={{ fighters[key]['url'] }} class="card-img-top" alt="{{key}}">
+        <img style="max-height:300px!important; height:auto; width:fit-content" 
+        src={{ fighters[key]['url'] }} 
+        class="card-img-top" 
+        alt="{{key}}">
         <div class="card-body">
         <p class="card-text">{{ fighters[key]["description"] }}</p>
         </div>
