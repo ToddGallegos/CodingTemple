@@ -16,7 +16,6 @@ def pokemon():
             
             def pokemon_info(p_name):
                 response = requests.get(f'https://pokeapi.co/api/v2/pokemon/{p_name.lower()}')
-                
                 if response.ok:
                     my_pokemon = {'pokemon_name': response.json()['forms'][0]['name'], 
                                 'base_hp': response.json()['stats'][0]['base_stat'], 
@@ -27,8 +26,8 @@ def pokemon():
                                 'front_shiny_sprite': response.json()['sprites']['front_shiny']}
                     return my_pokemon
 
-            my_pokemon = pokemon_info(pokemon_name)
-            if my_pokemon:
-                return render_template('pokemon.html', form = form, my_pokemon = my_pokemon)
-            
-    return render_template('pokemon.html', form = form)
+            the_pokemon = pokemon_info(pokemon_name)
+            form.pokemon_name.data = ''
+            return render_template('pokemon.html', form = form, the_pokemon = the_pokemon)
+    elif request.method == "GET":  
+        return render_template('pokemon.html', form = form)

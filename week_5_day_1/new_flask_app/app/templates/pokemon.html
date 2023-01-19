@@ -10,23 +10,28 @@
         {{ form.submit(style="margin-top:1rem", class="btn btn-primary btn-lg") }}
     </form>
 </div>
-{% if my_pokemon is defined %}
+
+{% if the_pokemon %}
+
 <div style="text-align:center; margin-top: 2rem">
     <h2>Your Pokemon:</h2>
-    <img src={{ my_pokemon.front_shiny_sprite }} alt="pokemon image">
-    <h3>Name: {{ my_pokemon.pokemon_name.capitalize() }} </h3>
-    <h3>Health: {{ my_pokemon.base_hp }} </h3>
-    <h3>Attack: {{ my_pokemon.base_attack }} </h3>
-    <h3>Defense: {{ my_pokemon.base_defense }} </h3>
-    <h3>XP: {{ my_pokemon.base_experience }} </h3>
-    <h3>Ability: {{ my_pokemon.ability_name.capitalize() }} </h3>
+    <img src={{ the_pokemon.front_shiny_sprite }} alt="pokemon image">
+    <h3>Name: {{ the_pokemon.pokemon_name.capitalize() }} </h3>
+    <h3>Health: {{ the_pokemon.base_hp }} </h3>
+    <h3>Attack: {{ the_pokemon.base_attack }} </h3>
+    <h3>Defense: {{ the_pokemon.base_defense }} </h3>
+    <h3>XP: {{ the_pokemon.base_experience }} </h3>
+    <h3>Ability: {{ the_pokemon.ability_name.capitalize() }} </h3>
 </div>
+
 {% endif %}
-{% if my_pokemon is not defined %}
+
+{% if the_pokemon == None %}
+
 <div style="text-align:center; margin-top: 2rem">
     <p>That Pokemon doesn't exist. Please try again!</p>
 </div>
-{% endif %}
 
+{% endif %}
 
 {% endblock %}
