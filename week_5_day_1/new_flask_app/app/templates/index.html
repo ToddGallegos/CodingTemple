@@ -1,23 +1,6 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
-<h1 style="text-align:center">Todd's 5: UFC Edition</h1>
-
-<div style="display:flex; justify-content: space-around; align-items:center" class="flex-container">
-{% for key in fighters %}
-
-    <div class="card" style="width: 18rem; border:none!important">
-        <img style="max-height:300px!important; height:auto; width:fit-content" 
-        src={{ fighters[key]['url'] }} 
-        class="card-img-top" 
-        alt="{{key}}">
-        <div class="card-body">
-        <p class="card-text">{{ fighters[key]["description"] }}</p>
-        </div>
-    </div>
-
-{% endfor %}
-</div>
-    
+<h1 style="text-align:center">Welcome to the Pokemon Catcher!</h1>
+<a class="btn btn-primary btn-lg" href="pokemon.html" role="button">Press Here</a>
 {% endblock %}
