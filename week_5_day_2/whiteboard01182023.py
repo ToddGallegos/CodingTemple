@@ -10,8 +10,7 @@
 def is_consecutive(list_of_nums):
     for i in range(len(list_of_nums) - 1):
         if list_of_nums[i] + 1 == list_of_nums[i+1]:
-            return True
+            pass
         else:
             return False
-        
-# print(is_consecutive([10,11,12,13,14]))
+    return True
