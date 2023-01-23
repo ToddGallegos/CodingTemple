@@ -1,5 +1,4 @@
 from flask_sqlalchemy import SQLAlchemy
-from datetime import datetime
 
 db = SQLAlchemy()
 
@@ -14,6 +13,10 @@ class User(db.Model):
         self.user_name = user_name
         self.email = email
         self.password = password
+        
+    def save_to_db(self):
+        db.session.add(self)
+        db.session.commit()
 
 class Pokemon(db.Model):
     id = db.Column(db.Integer, primary_key = True)
