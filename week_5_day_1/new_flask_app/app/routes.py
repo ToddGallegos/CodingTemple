@@ -31,6 +31,18 @@ def pokemon():
             the_pokemon = pokemon_info(pokemon_name)
             form.pokemon_name.data = ''
             
+            pokemon_name = the_pokemon['pokemon_name'].capitalize()
+            base_hp = the_pokemon['base_hp']
+            base_attack = the_pokemon['base_attack']
+            base_defense = the_pokemon['base_defense']
+            base_experience = the_pokemon['base_experience']
+            ability_name = the_pokemon['ability_name'].capitalize()
+            front_shiny_sprite = the_pokemon['front_shiny_sprite']
+            user_id = current_user.get_id()
+            
+            pokemon = Pokemon(pokemon_name, base_hp, base_attack, base_defense, base_experience, ability_name, front_shiny_sprite, user_id)
+            pokemon.save_to_db()
+            
             return render_template('pokemon.html', form = form, the_pokemon = the_pokemon)
         
     elif request.method == "GET":

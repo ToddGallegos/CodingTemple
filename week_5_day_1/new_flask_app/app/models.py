@@ -34,7 +34,7 @@ class Pokemon(db.Model):
     base_experience = db.Column(db.Integer, nullable = False)
     ability_name = db.Column(db.String, nullable = False)
     front_shiny_sprite = db.Column(db.String, nullable = False)
-    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable = False)
     
     def __init__(self, pokemon_name, base_hp, base_attack, base_defense, base_experience, ability_name, front_shiny_sprite, user_id):
         self.pokemon_name = pokemon_name
@@ -45,3 +45,7 @@ class Pokemon(db.Model):
         self.ability_name = ability_name
         self.front_shiny_sprite = front_shiny_sprite
         self.user_id = user_id
+        
+    def save_to_db(self):
+        db.session.add(self)
+        db.session.commit()
