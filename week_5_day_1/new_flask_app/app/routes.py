@@ -48,9 +48,8 @@ def signup():
             email = form.email.data
             password = form.password.data
             
-            # ADD USER TO DATABASE
             user = User(user_name, email, password)
-            user.save_to_db
+            user.save_to_db()
             
             flash("You created an account. Please log in.")
             return redirect(url_for('signin'))
