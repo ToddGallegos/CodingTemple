@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1 style="text-align:center; margin-top: 3%">Sign-Up</h1>
+
+<div style="text-align:center">
+    <form method="POST" class="container col-3">
+        {{ form.hidden_tag() }}
+        {{ form.user_name(style="margin-top:1rem", class='form-control', placeholder='User Name', autocomplete='off') }}
+        {{ form.email(style="margin-top:1rem", class='form-control', placeholder='Email', autocomplete='off') }}
+        {{ form.password(style="margin-top:1rem", class='form-control', placeholder='Password', autocomplete='off') }}
+        {{ form.confirm_password(style="margin-top:1rem", class='form-control', placeholder='Confirm Password', autocomplete='off') }}
+        {{ form.submit(style="margin-top:1rem", class="btn btn-primary btn-lg") }}
+    </form>
+</div>
+
+{% endblock %}

@@ -1,6 +1,6 @@
 from app import app
 from flask import render_template, request, redirect, url_for
-from .forms import PokemonCatcherForm
+from .forms import PokemonCatcherForm, SignUpForm, SignInForm
 import requests
 
 @app.route('/')
@@ -28,6 +28,39 @@ def pokemon():
 
             the_pokemon = pokemon_info(pokemon_name)
             form.pokemon_name.data = ''
+            
             return render_template('pokemon.html', form = form, the_pokemon = the_pokemon)
-    elif request.method == "GET":  
+        
+    elif request.method == "GET":
         return render_template('pokemon.html', form = form)
+    
+@app.route('/mypokemon')
+def mypokemon():
+    return render_template('mypokemon.html')
+
+@app.route('/signup', methods = ['GET', 'POST'])
+def signup():
+    form = SignUpForm()
+    if request.method == "POST":
+        if form.validate():
+            user_name = form.user_name.data
+            email = form.email.data
+            password = form.password.data
+            
+        return render_template('signup.html', form = form)
+    
+    elif request.method == "GET":
+        return render_template('signup.html', form = form)
+
+@app.route('/signin', methods = ['GET', 'POST'])
+def signin():
+    form = SignInForm()
+    if request.method == "POST":
+        if form.validate():
+            user_name = form.user_name.data
+            password = form.password.data
+            
+        return render_template('signin.html', form = form)
+    
+    elif request.method == 'GET':
+        return render_template('signin.html', form = form)
