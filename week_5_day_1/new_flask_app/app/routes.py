@@ -1,5 +1,5 @@
 from app import app
-from flask import render_template, request, redirect, url_for
+from flask import render_template, request, redirect, url_for, flash
 from .forms import PokemonCatcherForm, SignUpForm, SignInForm
 import requests
 
@@ -47,7 +47,12 @@ def signup():
             email = form.email.data
             password = form.password.data
             
-        return render_template('signup.html', form = form)
+            # ADD USER TO DATABASE
+            flash("You created an account. Please log in.")
+            return redirect('/signin')
+        else:
+            flash("Invalid input. Please try again.")
+            return render_template('signup.html', form = form)
     
     elif request.method == "GET":
         return render_template('signup.html', form = form)
