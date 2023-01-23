@@ -25,15 +25,24 @@
               <li class="nav-item">
                 <a class="nav-link active" href="/pokemon">Pokemon-Catcher</a>
               </li>
+              {% if current_user.is_authenticated %}
               <li class="nav-item">
                 <a class="nav-link active" href="/mypokemon">My Pokemon</a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="/logout">Logout</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="#">Welcome, {{ current_user.first_name }}</a>
+              </li>
+              {% else %}
               <li class="nav-item">
                 <a class="nav-link active" href="/signup">Sign-Up</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link active" href="/signin">Sign-In</a>
               </li>
+              {% endif %}
             </ul>
           </div>
         </div>

@@ -3,6 +3,7 @@ from flask import render_template, request, redirect, url_for, flash
 from .forms import PokemonCatcherForm, SignUpForm, SignInForm
 from .models import User, Pokemon
 import requests
+from flask_login import login_user, logout_user, current_user
 
 @app.route('/')
 def homepage():
@@ -70,7 +71,25 @@ def signin():
             user_name = form.user_name.data
             password = form.password.data
             
+            user = User.query.filter_by(user_name = user_name).first()
+            
+            if user:
+                if user.password == password:
+                    login_user(user)
+                    return redirect(url_for('homepage'))
+                else:
+                    #wrong password
+                    pass
+            else:
+                #user doesn't exist
+                pass
+            
         return render_template('signin.html', form = form)
     
     elif request.method == 'GET':
         return render_template('signin.html', form = form)
+    
+@app.route('/logout')
+def logout():
+    logout_user()
+    return redirect(url_for('homepage'))
