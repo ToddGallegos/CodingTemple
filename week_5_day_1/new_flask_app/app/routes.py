@@ -49,7 +49,7 @@ def signup():
             
             # ADD USER TO DATABASE
             flash("You created an account. Please log in.")
-            return redirect('/signin')
+            return redirect(url_for('signin'))
         else:
             flash("Invalid input. Please try again.")
             return render_template('signup.html', form = form)
