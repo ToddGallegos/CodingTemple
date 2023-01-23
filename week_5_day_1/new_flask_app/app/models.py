@@ -1,4 +1,5 @@
 from flask_sqlalchemy import SQLAlchemy
+from datetime import datetime
 
 db = SQLAlchemy()
 
@@ -7,12 +8,17 @@ class User(db.Model):
     user_name = db.Column(db.String(45), nullable = False, unique = True)
     email = db.Column(db.String(150), nullable = False, unique = True)
     password = db.Column(db.String, nullable = False)
+    first_name = db.Column(db.String(45), nullable = False)
+    last_name = db.Column(db.String(45), nullable = False)
+    date_created = db.Column(db.DateTime, nullable = False, default=datetime.utcnow())
     pokemon = db.relationship("Pokemon", backref='owner', lazy=True)
     
-    def __init__(self, user_name, email, password):
+    def __init__(self, user_name, email, password, first_name, last_name):
         self.user_name = user_name
         self.email = email
         self.password = password
+        self.first_name = first_name
+        self.last_name = last_name
         
     def save_to_db(self):
         db.session.add(self)

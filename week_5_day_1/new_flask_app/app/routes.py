@@ -47,8 +47,10 @@ def signup():
             user_name = form.user_name.data
             email = form.email.data
             password = form.password.data
+            first_name = form.first_name.data
+            last_name = form.last_name.data
             
-            user = User(user_name, email, password)
+            user = User(user_name, email, password, first_name, last_name)
             user.save_to_db()
             
             flash("You created an account. Please log in.")
