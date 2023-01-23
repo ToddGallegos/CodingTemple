@@ -2,12 +2,12 @@
 
 {% block content %}
 
-<h1 style="text-align:center; margin-top: 3%">Pokemon Catcher</h1>
+<h1 style="text-align:center; margin-top: 3%">Pokemon-Catcher</h1>
 <div style="text-align:center">
     <form method="POST" class="container col-3">
         {{ form.hidden_tag() }}
         {{ form.pokemon_name(style="margin-top:1rem", class='form-control', placeholder='Pokemon name', autocomplete='off') }}
-        {{ form.submit(style="margin-top:1rem", class="btn btn-primary btn-lg") }}
+        {{ form.submit(value="Catch!", style="margin-top:1rem", class="btn btn-primary btn-lg") }}
     </form>
 </div>
 
