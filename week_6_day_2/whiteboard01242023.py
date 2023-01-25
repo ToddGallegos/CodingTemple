@@ -31,14 +31,12 @@ def minIndexSum(l1, l2):
                 minsum = index_sum
             matches[l2[i]] = index_sum
 
-    print(matches)           
-    x = min(matches.values())
     for k, v in matches.items():
-        if v == x:
+        if v == min(matches.values()):
             answer.append(k)
     
     return answer
 
-# print(minIndexSum(["Shogun","Tapioca Express","Burger King","KFC"],["Piatti","The Grill at Torrey Pines","Hungry Hunter Steakhouse","Shogun"])) 
-# print(minIndexSum(["Shogun","Tapioca Express","Burger King","KFC"],["KFC","Shogun","Burger King"]))
-# print(minIndexSum(["Shogun","Tapioca Express","Burger King","KFC"],["KFC","Burger King","Tapioca Express","Shogun"]))
+print(minIndexSum(["Shogun","Tapioca Express","Burger King","KFC"],["Piatti","The Grill at Torrey Pines","Hungry Hunter Steakhouse","Shogun"])) 
+print(minIndexSum(["Shogun","Tapioca Express","Burger King","KFC"],["KFC","Shogun","Burger King"]))
+print(minIndexSum(["Shogun","Tapioca Express","Burger King","KFC"],["KFC","Burger King","Tapioca Express","Shogun"]))
