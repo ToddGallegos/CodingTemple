@@ -21,14 +21,11 @@
 def minIndexSum(l1, l2):
     dict1 = {k: l1.index(k) for k in l1}
     matches = {}
-    minsum = 9**9
     answer = []
     
     for i in range(len(l2)):
         if l2[i] in dict1:
             index_sum = dict1[l2[i]] + i
-            if index_sum < minsum:
-                minsum = index_sum
             matches[l2[i]] = index_sum
 
     for k, v in matches.items():
