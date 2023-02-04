@@ -12,18 +12,25 @@
 // Output: true
 
 function ransom(note, magazine){
-    let noteLetters = note.split('')
-    let magazineLetters = magazine.split('')
-    let magazineObject = {magazineLetters}
-    console.log(magazineobject)
+    const noteLetters = note.split('')
+    const magazineLetters = magazine.split('')
+    const magazineObject = {}
+    for (const letter of magazineLetters) {
+        magazineObject[letter] = magazineObject[letter] ? magazineObject[letter] + 1 : 1;
+      }
     for (let i = 0; i < noteLetters.length; i++){
-        if (magazineLetters.includes(noteLetters[i])){
-            delete magazineLetters[magazineLetters.indexOf(noteLetters[i])]
-        } else if (!(magazineLetters.includes(noteLetters[i]))) {
+        console.log(magazineObject)
+        if (noteLetters[i] in magazineObject){
+            if (magazineObject[noteLetters[i]] == 1){
+                delete magazineObject[noteLetters[i]]
+            } else {
+                magazineObject[noteLetters[i]] -= 1
+            }
+        } else if (!(noteLetters[i] in magazineObject)) {
             return false
         }
     }
     return true
 }
 
-console.log(ransom("abba","ccabcab"))
+console.log(ransom("aa","aab"))
